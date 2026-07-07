@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Meridian Health Clinic</title>
+<title>Patient Testimonials | Meridian Health Clinic</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <style>
@@ -29,19 +29,24 @@ nav{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;background:rg
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:80px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
 .page-hero-inner{max-width:1240px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
 .breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem;font-size:.78rem;color:rgba(255,255,255,.5)}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}.breadcrumb a:hover{color:var(--gold)}
-.breadcrumb span{color:var(--gold)}
+.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}.breadcrumb span{color:var(--gold)}
 .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;color:#fff;max-width:720px;margin-bottom:1rem;line-height:1.08}
 .page-hero h1 em{font-style:italic;color:#B8D4DA}
 .page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.8;max-width:580px}
 .section{padding:5.5rem 0}.section-light{background:#fff}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem}
 .eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;font-family:'DM Sans',sans-serif}
-.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--teal);line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--teal);line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem}
+.section-p{color:var(--muted);font-size:1rem;line-height:1.8;max-width:580px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-.btn-teal{background:var(--teal);color:#fff;padding:.85rem 1.9rem;border-radius:8px;font-weight:500;font-size:.9rem;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;border:none;cursor:pointer}
+.btn-teal{background:var(--teal);color:#fff;padding:.85rem 1.9rem;border-radius:8px;font-weight:500;font-size:.9rem;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif}
 .btn-teal:hover{background:var(--teal-mid);transform:translateY(-2px)}
+.cta-band{background:linear-gradient(130deg,var(--teal) 0%,#1B6B7B 100%);padding:5rem 0;text-align:center}
+.cta-inner{max-width:660px;margin:0 auto;padding:0 2rem}
+.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;margin-bottom:1rem}
+.cta-inner p{color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.8}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
 .footer-grid{max-width:1240px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
 .footer-brand p{color:rgba(255,255,255,.4);font-size:.85rem;line-height:1.75;margin-top:.75rem;max-width:270px}
@@ -52,28 +57,22 @@ footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
 .footer-bot{max-width:1240px;margin:2.5rem auto 0;padding:1.25rem 2rem 0;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 .footer-bot p{color:rgba(255,255,255,.28);font-size:.75rem}
 
-/* CONTACT SPECIFIC */
-.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:start}
-.form-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2.5rem}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
-.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
-.field label{font-size:.8rem;font-weight:600;color:var(--teal)}
-.field input,.field select,.field textarea{font-family:'DM Sans',sans-serif;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:8px;font-size:.9rem;color:var(--text);background:var(--bg)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
-.field textarea{resize:vertical;min-height:110px}
-.info-card{background:var(--teal);border-radius:18px;padding:2.5rem;color:#fff}
-.info-card h3{font-size:1.3rem;margin-bottom:1.5rem}
-.info-row{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
-.info-row .icon{font-size:1.2rem;flex-shrink:0}
-.info-row h5{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-.info-row p,.info-row a{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.6;text-decoration:none}
-.map-placeholder{height:180px;background:linear-gradient(135deg,#1B6B7B 0%,#0A3D4A 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-top:1.5rem;flex-direction:column;gap:.5rem}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:3rem}
-.cc-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:2rem;text-align:center}
-.cc-card h4{font-size:1.05rem;color:var(--teal);margin-bottom:.75rem}
-.cc-card p{font-size:.85rem;color:var(--muted);line-height:1.7}
-.cc-card a{color:var(--gold);font-weight:600;text-decoration:none}
-@media(max-width:900px){.contact-grid,.contact-cards{grid-template-columns:1fr}.field-row{grid-template-columns:1fr}}
+/* TESTIMONIALS SPECIFIC */
+.testimonial-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:3rem}
+.testimonial-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2.25rem;transition:all .25s}
+.testimonial-card:hover{border-color:var(--teal-mid);transform:translateY(-3px);box-shadow:0 12px 35px rgba(10,61,74,.08)}
+.testimonial-stars{color:var(--gold);font-size:1.1rem;letter-spacing:.1em;margin-bottom:1rem}
+.testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;line-height:1.8;color:var(--text);margin-bottom:1.5rem}
+.testimonial-author{display:flex;align-items:center;gap:1rem}
+.testimonial-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--sage));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem}
+.testimonial-name{font-weight:700;color:var(--teal)}
+.testimonial-role{font-size:.82rem;color:var(--muted)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;text-align:center}
+.stat-item{padding:1.5rem}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:.5rem}
+.stat-label{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:1024px){.testimonial-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.stats-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -88,12 +87,12 @@ footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="doctors.html">Our Doctors</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="testimonials.html" class="active">Testimonials</a></li>
     <li><a href="careers.html">Careers</a></li>
     <li><a href="patient-info.html">Patient Info</a></li>
     <li><a href="insurance.html">Insurance</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta active">Book Appointment</a></li>
+    <li><a href="contact.html" class="nav-cta">Book Appointment</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')"><span></span><span></span><span></span></button>
 </div>
@@ -104,117 +103,82 @@ footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
 
 <section class="page-hero">
 <div class="page-hero-inner">
-  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact</span></div>
-  <h1>Book Your <em>Appointment</em></h1>
-  <p>Choose your specialist, select a time, and we'll confirm your booking within two hours.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Testimonials</span></div>
+  <h1>Stories from Patients Who Feel <em>Actually Heard</em></h1>
+  <p>Don't just take our word for it — hear what our patients have to say about their experience at Meridian Health.</p>
+</div>
+</section>
+
+<section class="section section-light">
+<div class="container">
+  <div class="reveal"><p class="eyebrow">By the Numbers</p><h2 class="section-h">Patient Satisfaction Speaks for Itself</h2></div>
+  <div class="stats-row">
+    <div class="stat-item reveal"><div class="stat-number">98%</div><div class="stat-label">Patient Satisfaction</div></div>
+    <div class="stat-item reveal"><div class="stat-number">12k+</div><div class="stat-label">Patients Treated</div></div>
+    <div class="stat-item reveal"><div class="stat-number">4.9</div><div class="stat-label">Average Rating</div></div>
+    <div class="stat-item reveal"><div class="stat-number">85%</div><div class="stat-label">Return Patients</div></div>
+  </div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-  <div class="contact-grid">
-    <div class="form-card reveal">
-      <h3 style="color:var(--teal);margin-bottom:1.5rem">Send Us a Message</h3>
-      <form onsubmit="event.preventDefault();this.reset();alert('Thank you — your message has been received. Our team will respond within two hours.')">
-        <div class="field-row">
-          <div class="field">
-            <label>First Name</label>
-            <input type="text" required>
-          </div>
-          <div class="field">
-            <label>Last Name</label>
-            <input type="text" required>
-          </div>
+  <div class="reveal"><p class="eyebrow">Patient Stories</p><h2 class="section-h">What Our Patients Say</h2></div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">I never felt rushed. Dr. Vasquez spent a full 30 minutes going through my results and actually answered every question I had. That never happens in an NHS context.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">HR</div>
+        <div>
+          <div class="testimonial-name">Hannah R.</div>
+          <div class="testimonial-role">Patient since 2019 · General Medicine</div>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label>Email</label>
-            <input type="email" required>
-          </div>
-          <div class="field">
-            <label>Phone</label>
-            <input type="tel">
-          </div>
-        </div>
-        <div class="field">
-          <label>Department / Specialty</label>
-          <select>
-            <option>General & Internal Medicine</option>
-            <option>Cardiology</option>
-            <option>Dermatology</option>
-            <option>Orthopaedics</option>
-            <option>Women's Health</option>
-            <option>Mental Health</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Message</label>
-          <textarea placeholder="Tell us about your enquiry..."></textarea>
-        </div>
-        <button type="submit" class="btn-teal">Send Message →</button>
-      </form>
+      </div>
     </div>
-    <div class="info-card reveal">
-      <h3>Contact Information</h3>
-      <div class="info-row">
-        <div class="icon">📍</div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">My insurer was billed directly without me chasing a single form. Made an already stressful cardiac scare significantly less overwhelming.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MT</div>
         <div>
-          <h5>Location</h5>
-          <p>123 Healthcare Boulevard<br>City Centre, 10001</p>
+          <div class="testimonial-name">Marco T.</div>
+          <div class="testimonial-role">Patient since 2021 · Cardiology</div>
         </div>
       </div>
-      <div class="info-row">
-        <div class="icon">📞</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">Same doctor every visit, for four years now. The continuity alone makes managing a long-term condition feel genuinely manageable rather than exhausting.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AK</div>
         <div>
-          <h5>Phone</h5>
-          <a href="tel:+15552408800">+1 (555) 240-8800</a>
+          <div class="testimonial-name">Aisha K.</div>
+          <div class="testimonial-role">Patient since 2017 · Women's Health</div>
         </div>
       </div>
-      <div class="info-row">
-        <div class="icon">✉️</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">From booking to follow-up, everything was smooth. The digital intake form saved so much time, and my results came back within 48 hours.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">JS</div>
         <div>
-          <h5>Email</h5>
-          <a href="mailto:appointments@meridianhealthclinic.com">appointments@meridianhealthclinic.com</a>
+          <div class="testimonial-name">James S.</div>
+          <div class="testimonial-role">Patient since 2023 · Dermatology</div>
         </div>
-      </div>
-      <div class="info-row">
-        <div class="icon">🕐</div>
-        <div>
-          <h5>Hours</h5>
-          <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
-        </div>
-      </div>
-      <div class="map-placeholder">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <span style="color:rgba(255,255,255,.3);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase">Clinic Location</span>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<section class="section section-light">
-<div class="container">
-  <div class="reveal"><p class="eyebrow">Quick Links</p><h2 class="section-h">Other Ways to Connect</h2></div>
-  <div class="contact-cards">
-    <div class="cc-card reveal">
-      <div style="font-size:2rem;margin-bottom:1rem">📞</div>
-      <h4>Call Us Directly</h4>
-      <p>Speak with our bookings team right away for urgent appointments.</p>
-      <a href="tel:+15552408800">+1 (555) 240-8800 →</a>
-    </div>
-    <div class="cc-card reveal">
-      <div style="font-size:2rem;margin-bottom:1rem">📋</div>
-      <h4>Existing Patients</h4>
-      <p>Log in to your patient portal to book follow-ups or view results.</p>
-      <a href="#">Patient Portal →</a>
-    </div>
-    <div class="cc-card reveal">
-      <div style="font-size:2rem;margin-bottom:1rem">🗺️</div>
-      <h4>Visit Us</h4>
-      <p>Find us in the City Centre with free on-site parking available.</p>
-      <a href="#">Get Directions →</a>
-    </div>
+<section class="cta-band">
+<div class="cta-inner reveal">
+  <h2>Ready to Experience the Difference?</h2>
+  <p>Join thousands of patients who have made the switch to unhurried, patient-centred care.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-teal" style="background:var(--gold)">Book Appointment →</a>
   </div>
 </div>
 </section>

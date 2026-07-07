@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Meridian Health Clinic</title>
+<title>Careers | Meridian Health Clinic</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <style>
@@ -29,19 +29,24 @@ nav{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;background:rg
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:80px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
 .page-hero-inner{max-width:1240px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
 .breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem;font-size:.78rem;color:rgba(255,255,255,.5)}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}.breadcrumb a:hover{color:var(--gold)}
-.breadcrumb span{color:var(--gold)}
+.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}.breadcrumb span{color:var(--gold)}
 .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;color:#fff;max-width:720px;margin-bottom:1rem;line-height:1.08}
 .page-hero h1 em{font-style:italic;color:#B8D4DA}
 .page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.8;max-width:580px}
 .section{padding:5.5rem 0}.section-light{background:#fff}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem}
 .eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;font-family:'DM Sans',sans-serif}
-.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--teal);line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--teal);line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem}
+.section-p{color:var(--muted);font-size:1rem;line-height:1.8;max-width:580px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-.btn-teal{background:var(--teal);color:#fff;padding:.85rem 1.9rem;border-radius:8px;font-weight:500;font-size:.9rem;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;border:none;cursor:pointer}
+.btn-teal{background:var(--teal);color:#fff;padding:.85rem 1.9rem;border-radius:8px;font-weight:500;font-size:.9rem;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif}
 .btn-teal:hover{background:var(--teal-mid);transform:translateY(-2px)}
+.cta-band{background:linear-gradient(130deg,var(--teal) 0%,#1B6B7B 100%);padding:5rem 0;text-align:center}
+.cta-inner{max-width:660px;margin:0 auto;padding:0 2rem}
+.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;margin-bottom:1rem}
+.cta-inner p{color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.8}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
 .footer-grid{max-width:1240px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
 .footer-brand p{color:rgba(255,255,255,.4);font-size:.85rem;line-height:1.75;margin-top:.75rem;max-width:270px}
@@ -52,28 +57,23 @@ footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
 .footer-bot{max-width:1240px;margin:2.5rem auto 0;padding:1.25rem 2rem 0;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 .footer-bot p{color:rgba(255,255,255,.28);font-size:.75rem}
 
-/* CONTACT SPECIFIC */
-.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:start}
-.form-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2.5rem}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
-.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
-.field label{font-size:.8rem;font-weight:600;color:var(--teal)}
-.field input,.field select,.field textarea{font-family:'DM Sans',sans-serif;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:8px;font-size:.9rem;color:var(--text);background:var(--bg)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
-.field textarea{resize:vertical;min-height:110px}
-.info-card{background:var(--teal);border-radius:18px;padding:2.5rem;color:#fff}
-.info-card h3{font-size:1.3rem;margin-bottom:1.5rem}
-.info-row{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
-.info-row .icon{font-size:1.2rem;flex-shrink:0}
-.info-row h5{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-.info-row p,.info-row a{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.6;text-decoration:none}
-.map-placeholder{height:180px;background:linear-gradient(135deg,#1B6B7B 0%,#0A3D4A 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-top:1.5rem;flex-direction:column;gap:.5rem}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:3rem}
-.cc-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:2rem;text-align:center}
-.cc-card h4{font-size:1.05rem;color:var(--teal);margin-bottom:.75rem}
-.cc-card p{font-size:.85rem;color:var(--muted);line-height:1.7}
-.cc-card a{color:var(--gold);font-weight:600;text-decoration:none}
-@media(max-width:900px){.contact-grid,.contact-cards{grid-template-columns:1fr}.field-row{grid-template-columns:1fr}}
+/* CAREERS SPECIFIC */
+.job-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .25s;margin-bottom:1.5rem}
+.job-card:hover{border-color:var(--teal-mid);transform:translateY(-3px);box-shadow:0 12px 35px rgba(10,61,74,.08)}
+.job-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+.job-title{font-size:1.3rem;font-weight:700;color:var(--teal)}
+.job-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.job-meta span{display:flex;align-items:center;gap:.4rem}
+.job-desc{color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+.job-tags{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.job-tag{background:var(--teal-light);color:var(--teal);padding:.4rem .9rem;border-radius:100px;font-size:.78rem;font-weight:500}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.benefit-card{text-align:center;padding:2rem;background:#fff;border:1px solid var(--border);border-radius:14px}
+.benefit-icon{font-size:2rem;margin-bottom:1rem}
+.benefit-card h4{color:var(--teal);margin-bottom:.5rem}
+.benefit-card p{color:var(--muted);font-size:.88rem;line-height:1.6}
+@media(max-width:1024px){.benefits-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.benefits-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -89,11 +89,11 @@ footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
     <li><a href="services.html">Services</a></li>
     <li><a href="doctors.html">Our Doctors</a></li>
     <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="careers.html">Careers</a></li>
+    <li><a href="careers.html" class="active">Careers</a></li>
     <li><a href="patient-info.html">Patient Info</a></li>
     <li><a href="insurance.html">Insurance</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta active">Book Appointment</a></li>
+    <li><a href="contact.html" class="nav-cta">Book Appointment</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')"><span></span><span></span><span></span></button>
 </div>
@@ -104,117 +104,94 @@ footer{background:#060e12;color:#fff;padding:4rem 0 2rem}
 
 <section class="page-hero">
 <div class="page-hero-inner">
-  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact</span></div>
-  <h1>Book Your <em>Appointment</em></h1>
-  <p>Choose your specialist, select a time, and we'll confirm your booking within two hours.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Careers</span></div>
+  <h1>Join a Team Built Around <em>Patient Care</em></h1>
+  <p>We're always looking for compassionate clinicians and administrative staff who share our philosophy of unhurried, patient-centred care.</p>
+</div>
+</section>
+
+<section class="section section-light">
+<div class="container">
+  <div class="reveal"><p class="eyebrow">Why Join Us</p><h2 class="section-h">Culture & Benefits</h2><p class="section-p">We know that great patient care starts with happy, supported teams.</p></div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal"><div class="benefit-icon">⏰</div><h4>Balanced Hours</h4><p>No on-call rotations, reasonable schedules, and work-life balance that actually works.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">📚</div><h4>Continuing Education</h4><p>Full support for professional development, certifications, and conferences.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">💰</div><h4>Competitive Compensation</h4><p>Above-market pay with performance bonuses and clear advancement paths.</p></div>
+  </div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-  <div class="contact-grid">
-    <div class="form-card reveal">
-      <h3 style="color:var(--teal);margin-bottom:1.5rem">Send Us a Message</h3>
-      <form onsubmit="event.preventDefault();this.reset();alert('Thank you — your message has been received. Our team will respond within two hours.')">
-        <div class="field-row">
-          <div class="field">
-            <label>First Name</label>
-            <input type="text" required>
-          </div>
-          <div class="field">
-            <label>Last Name</label>
-            <input type="text" required>
+  <div class="reveal"><p class="eyebrow">Open Roles</p><h2 class="section-h">Current Opportunities</h2></div>
+  <div class="reveal">
+    <div class="job-card">
+      <div class="job-header">
+        <div>
+          <h3 class="job-title">Consultant Cardiologist</h3>
+          <div class="job-meta">
+            <span>📍 City Centre</span>
+            <span>⏰ Full-time</span>
+            <span>💰 Competitive</span>
           </div>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label>Email</label>
-            <input type="email" required>
-          </div>
-          <div class="field">
-            <label>Phone</label>
-            <input type="tel">
-          </div>
-        </div>
-        <div class="field">
-          <label>Department / Specialty</label>
-          <select>
-            <option>General & Internal Medicine</option>
-            <option>Cardiology</option>
-            <option>Dermatology</option>
-            <option>Orthopaedics</option>
-            <option>Women's Health</option>
-            <option>Mental Health</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Message</label>
-          <textarea placeholder="Tell us about your enquiry..."></textarea>
-        </div>
-        <button type="submit" class="btn-teal">Send Message →</button>
-      </form>
+        <a href="#" class="btn-teal">Apply Now →</a>
+      </div>
+      <p class="job-desc">Join our cardiology team with a focus on preventive care and continuity of treatment. Work with state-of-the-art on-site diagnostic facilities.</p>
+      <div class="job-tags">
+        <span class="job-tag">Cardiology</span>
+        <span class="job-tag">Consultant</span>
+        <span class="job-tag">Full-time</span>
+      </div>
     </div>
-    <div class="info-card reveal">
-      <h3>Contact Information</h3>
-      <div class="info-row">
-        <div class="icon">📍</div>
+    <div class="job-card">
+      <div class="job-header">
         <div>
-          <h5>Location</h5>
-          <p>123 Healthcare Boulevard<br>City Centre, 10001</p>
+          <h3 class="job-title">Registered Nurse</h3>
+          <div class="job-meta">
+            <span>📍 City Centre</span>
+            <span>⏰ Full-time</span>
+            <span>💰 Competitive</span>
+          </div>
         </div>
+        <a href="#" class="btn-teal">Apply Now →</a>
       </div>
-      <div class="info-row">
-        <div class="icon">📞</div>
+      <p class="job-desc">Join our nursing team providing compassionate care across all departments. Experience in private practice preferred but not essential.</p>
+      <div class="job-tags">
+        <span class="job-tag">Nursing</span>
+        <span class="job-tag">Registered</span>
+        <span class="job-tag">Full-time</span>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-header">
         <div>
-          <h5>Phone</h5>
-          <a href="tel:+15552408800">+1 (555) 240-8800</a>
+          <h3 class="job-title">Reception & Patient Care Coordinator</h3>
+          <div class="job-meta">
+            <span>📍 City Centre</span>
+            <span>⏰ Part-time</span>
+            <span>💰 Competitive</span>
+          </div>
         </div>
+        <a href="#" class="btn-teal">Apply Now →</a>
       </div>
-      <div class="info-row">
-        <div class="icon">✉️</div>
-        <div>
-          <h5>Email</h5>
-          <a href="mailto:appointments@meridianhealthclinic.com">appointments@meridianhealthclinic.com</a>
-        </div>
-      </div>
-      <div class="info-row">
-        <div class="icon">🕐</div>
-        <div>
-          <h5>Hours</h5>
-          <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
-        </div>
-      </div>
-      <div class="map-placeholder">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <span style="color:rgba(255,255,255,.3);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase">Clinic Location</span>
+      <p class="job-desc">Be the first point of contact for our patients. Help coordinate appointments and provide exceptional customer service.</p>
+      <div class="job-tags">
+        <span class="job-tag">Administration</span>
+        <span class="job-tag">Reception</span>
+        <span class="job-tag">Part-time</span>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<section class="section section-light">
-<div class="container">
-  <div class="reveal"><p class="eyebrow">Quick Links</p><h2 class="section-h">Other Ways to Connect</h2></div>
-  <div class="contact-cards">
-    <div class="cc-card reveal">
-      <div style="font-size:2rem;margin-bottom:1rem">📞</div>
-      <h4>Call Us Directly</h4>
-      <p>Speak with our bookings team right away for urgent appointments.</p>
-      <a href="tel:+15552408800">+1 (555) 240-8800 →</a>
-    </div>
-    <div class="cc-card reveal">
-      <div style="font-size:2rem;margin-bottom:1rem">📋</div>
-      <h4>Existing Patients</h4>
-      <p>Log in to your patient portal to book follow-ups or view results.</p>
-      <a href="#">Patient Portal →</a>
-    </div>
-    <div class="cc-card reveal">
-      <div style="font-size:2rem;margin-bottom:1rem">🗺️</div>
-      <h4>Visit Us</h4>
-      <p>Find us in the City Centre with free on-site parking available.</p>
-      <a href="#">Get Directions →</a>
-    </div>
+<section class="cta-band">
+<div class="cta-inner reveal">
+  <h2>Don't See the Right Role?</h2>
+  <p>We're always happy to hear from talented people who align with our values. Send us a speculative application.</p>
+  <div class="cta-btns">
+    <a href="mailto:careers@meridianhealthclinic.com" class="btn-teal" style="background:var(--gold)">Email Us →</a>
   </div>
 </div>
 </section>
