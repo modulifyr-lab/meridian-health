@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const services = [
+  {
+    name: "General & Internal Medicine",
+    icon: "🏥",
+    desc: "Comprehensive primary care for adults, including preventive medicine, chronic disease management, and acute care.",
+    conditions: ["Hypertension", "Diabetes", "Respiratory infections", "Digestive disorders", "Preventive health screenings"],
+    whatToExpect: "Your first visit includes a thorough review of your medical history, physical examination, and discussion of your health goals.",
+    price: "Initial $120–180 · Follow-up $80–120",
+  },
+  {
+    name: "Cardiology",
+    icon: "🫀",
+    desc: "Complete heart health services from prevention to diagnosis and treatment of cardiovascular conditions.",
+    conditions: ["Coronary artery disease", "Heart rhythm disorders", "High blood pressure", "Heart failure", "Cholesterol management"],
+    whatToExpect: "Comprehensive cardiac assessment including ECG, risk evaluation, and personalised prevention plans.",
+    price: "Initial $150–200 · Follow-up $100–140",
+  },
+  {
+    name: "Dermatology",
+    icon: "🧴",
+    desc: "Medical and cosmetic dermatology for all skin, hair, and nail conditions.",
+    conditions: ["Acne and rosacea", "Eczema and psoriasis", "Skin cancer screening", "Mole evaluation", "Anti-ageing treatments"],
+    whatToExpect: "Detailed skin examination with dermoscopy, treatment planning, and follow-up schedules as needed.",
+    price: "Initial $120–180 · Follow-up $80–120",
+  },
+  {
+    name: "Orthopaedics",
+    icon: "🦴",
+    desc: "Bone, joint, and muscle care from sports injuries to chronic pain management.",
+    conditions: ["Joint pain and arthritis", "Sports injuries", "Back and neck pain", "Fractures", "Osteoporosis"],
+    whatToExpect: "Physical examination, movement assessment, and imaging referrals as needed to create a treatment plan.",
+    price: "Initial $140–190 · Follow-up $90–130",
+  },
+  {
+    name: "Women's Health",
+    icon: "👩‍⚕️",
+    desc: "Comprehensive gynaecological and reproductive health services in a comfortable, confidential setting.",
+    conditions: ["Annual well-woman exams", "Contraception", "PCOS and hormonal issues", "Menopause management", "Reproductive health"],
+    whatToExpect: "Respectful, unhurried consultations with time to discuss your concerns and questions.",
+    price: "Initial $120–180 · Follow-up $80–120",
+  },
+  {
+    name: "Mental Health",
+    icon: "🧠",
+    desc: "Psychiatric and psychological support for anxiety, depression, stress, and other mental health concerns.",
+    conditions: ["Anxiety and depression", "Stress management", "Sleep disorders", "Burnout", "Life transitions"],
+    whatToExpect: "Initial psychiatric assessment to understand your situation and develop a personalised care approach.",
+    price: "Initial $180–250 · Follow-up $140–180",
+  },
+];
+---
+
+<Layout
+  title="Services"
+  description="Explore Meridian Health's six clinical departments and comprehensive healthcare services."
+>
+  <PageHeader
+    eyebrow="Our Services"
+    title="Six Specialties, One Standard of Care"
+    lede="Every department maintains the same commitment: unhurried appointments, same-physician continuity, and transparent pricing."
+  />
+
+  <!-- INTRO -->
+  <section class="px-6 py-16 md:px-10 md:py-20">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="rounded-2xl border border-border bg-white p-10 md:p-16" data-reveal>
+        <p class="font-display text-2xl font-semibold text-teal text-balance md:text-3xl">
+          "Every specialist at Meridian Health was recruited not just for their clinical expertise, but for their commitment to patient-centred care."
+        </p>
+        <p class="mt-6 text-muted">— Dr. Elena Vasquez, Medical Director</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  {services.map((s, i) => (
+    <section class={`px-6 py-20 md:px-10 md:py-28 ${i % 2 === 0 ? 'bg-white' : 'bg-teal-light'}`}>
+      <div class="mx-auto max-w-[1400px]">
+        <div class="grid gap-12 md:grid-cols-2 md:items-start">
+          <div class={i % 2 === 0 ? '' : 'md:order-2'} data-reveal>
+            <span class="text-5xl">{s.icon}</span>
+            <h2 class="mt-4 font-display text-4xl font-semibold text-teal md:text-5xl">{s.name}</h2>
+            <p class="mt-6 text-lg text-muted">{s.desc}</p>
+            <div class="mt-8 rounded-xl bg-teal-light p-8">
+              <p class="eyebrow mb-4 text-gold">Conditions We Treat</p>
+              <div class="flex flex-wrap gap-2">
+                {s.conditions.map((c) => (
+                  <span class="rounded-full bg-white px-4 py-2 text-sm text-teal border border-border">{c}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class={i % 2 === 0 ? '' : 'md:order-1'} data-reveal>
+            <div class="rounded-2xl border border-border bg-white p-10">
+              <p class="eyebrow mb-4 text-gold">What to Expect</p>
+              <p class="text-muted">{s.whatToExpect}</p>
+              <div class="mt-8 border-t border-border pt-8">
+                <p class="eyebrow mb-3 text-gold">Approximate Pricing</p>
+                <p class="font-display text-xl font-semibold text-teal">{s.price}</p>
+                <p class="mt-2 text-sm text-muted">Final cost confirmed at consultation</p>
+              </div>
+              <a href="/contact" class="eyebrow mt-8 inline-block rounded-full bg-gold px-8 py-4 text-teal transition-all hover:bg-gold-light hover:shadow-lg">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- INSURANCE NOTE -->
+  <section class="bg-teal px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <h2 class="font-display text-4xl font-semibold text-bg md:text-5xl">Accepted Insurance</h2>
+      <p class="mt-6 text-lg text-bg/80">
+        We work directly with major international insurance providers including Bupa, Cigna, Aetna, Allianz, and more. See our insurance page for the full list.
+      </p>
+      <a href="/insurance" class="eyebrow mt-8 inline-block rounded-full border border-gold px-8 py-4 text-gold transition-all hover:bg-gold hover:text-teal">
+        View Accepted Insurers
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+  </script>
+</Layout>

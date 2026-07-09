@@ -1,0 +1,193 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const bookingSteps = [
+  { step: "1", title: "Book Online or Call", desc: "Use our contact form or call +1 (555) 240-8800 to schedule your appointment." },
+  { step: "2", title: "Receive Confirmation", desc: "You'll receive a confirmation email with your appointment details and pre-visit form." },
+  { step: "3", title: "Arrive 10 Minutes Early", desc: "Please arrive slightly early for your first visit to complete any remaining paperwork." },
+];
+
+const bringItems = [
+  "Valid ID or passport",
+  "Insurance card (if applicable)",
+  "List of current medications",
+  "Recent test results or scans",
+  "Referral letter (if provided by GP)",
+];
+
+const expectations = [
+  { title: "30+ Minute Consultations", desc: "Your physician will take the time needed to understand your complete health picture." },
+  { title: "Same Physician, Every Visit", desc: "Build a relationship with your doctor. They'll remember your history." },
+  { title: "Fully Digital Records", desc: "Secure, accessible, and always up-to-date across all our departments." },
+  { title: "Results in 24–48 Hours", desc: "Most test results are available within 24–48 hours, with physician follow-up." },
+];
+
+const pricing = [
+  { service: "General Medicine - Initial", price: "$120–180" },
+  { service: "General Medicine - Follow-up", price: "$80–120" },
+  { service: "Cardiology - Initial", price: "$150–200" },
+  { service: "Cardiology - Follow-up", price: "$100–140" },
+  { service: "Dermatology - Initial", price: "$120–180" },
+  { service: "Orthopaedics - Initial", price: "$140–190" },
+  { service: "Women's Health - Initial", price: "$120–180" },
+  { service: "Mental Health - Initial", price: "$180–250" },
+  { service: "Diagnostics (blood tests, ECG)", price: "From $50" },
+];
+
+const diagnostics = [
+  "Blood tests and panels",
+  "ECG and心脏 monitoring",
+  "Ultrasound imaging",
+  "Blood pressure monitoring",
+  "MRI/CT referrals",
+];
+---
+
+<Layout
+  title="Patient Information"
+  description="Essential information for first-time visitors to Meridian Health Clinic."
+>
+  <PageHeader
+    eyebrow="For Patients"
+    title="Your First Visit"
+    lede="Everything you need to know to prepare for your appointment."
+  />
+
+  <!-- BOOKING PROCESS -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Before You Arrive</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          How to Book
+        </h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        {bookingSteps.map((s) => (
+          <div class="relative" data-reveal>
+            <div class="absolute -top-3 -left-3 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-teal font-display text-xl font-semibold">
+              {s.step}
+            </div>
+            <div class="pt-14">
+              <h3 class="font-display text-xl font-semibold text-teal">{s.title}</h3>
+              <p class="mt-3 text-muted">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO BRING -->
+  <section class="bg-teal-light px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-16 md:grid-cols-2 md:items-center">
+        <div data-reveal>
+          <p class="eyebrow mb-4 text-gold">Checklist</p>
+          <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+            What to Bring
+          </h2>
+          <p class="mt-6 text-lg text-muted">
+            Having these ready will help your first consultation go smoothly.
+          </p>
+        </div>
+        <div data-reveal>
+          <div class="rounded-2xl border border-border bg-white p-10">
+            <ul class="space-y-4">
+              {bringItems.map((item) => (
+                <li class="flex items-center gap-4">
+                  <span class="text-gold text-xl">✓</span>
+                  <span class="text-teal">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPECTATIONS -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">The Meridian Experience</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">What to Expect</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        {expectations.map((e) => (
+          <div class="rounded-xl border border-border bg-white p-8" data-reveal>
+            <h3 class="font-display text-lg font-semibold text-teal">{e.title}</h3>
+            <p class="mt-3 text-muted">{e.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="bg-teal px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Transparent Pricing</p>
+        <h2 class="font-display text-4xl font-semibold text-bg md:text-5xl"> Consultation Fees</h2>
+      </div>
+
+      <div class="overflow-x-auto" data-reveal>
+        <table class="w-full min-w-[500px] border-collapse bg-teal-dark/50 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="border-b border-bg/20">
+              <th class="py-4 px-6 text-left font-display text-lg font-semibold text-bg">Service</th>
+              <th class="py-4 px-6 text-right font-display text-lg font-semibold text-bg">Price (USD)</th>
+            </tr>
+          </thead>
+          <tbody class="text-bg/80">
+            {pricing.map((p) => (
+              <tr class="border-b border-bg/10">
+                <td class="py-4 px-6">{p.service}</td>
+                <td class="py-4 px-6 text-right text-gold font-semibold">{p.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-8 text-center text-bg/70 text-sm" data-reveal>
+        All prices in USD. Final cost confirmed at consultation. Prices subject to change.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTICS -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-16 md:grid-cols-2 md:items-center">
+        <div data-reveal>
+          <p class="eyebrow mb-4 text-gold">On-Site Diagnostics</p>
+          <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+            Laboratory & Imaging
+          </h2>
+          <p class="mt-6 text-lg text-muted">
+            Many diagnostic tests can be done right in our clinic, saving you trips to external laboratories.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4" data-reveal>
+          {diagnostics.map((d) => (
+            <div class="flex items-center gap-3 rounded-lg border border-border bg-white px-4 py-3">
+              <span class="text-gold">✓</span>
+              <span class="text-teal">{d}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+  </script>
+</Layout>

@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const principles = [
+  { title: "Unhurried Appointments", desc: "30+ minutes minimum. Your physician should understand your whole story, not just your latest symptom." },
+  { title: "Same Physician Continuity", desc: "See the same doctor every visit. Build a relationship. Let them truly know your medical history." },
+  { title: "Transparent Pricing", desc: "Clear costs before treatment. No surprises. Multilingual invoices available." },
+];
+
+const leadership = [
+  { name: "Dr. Elena Vasquez", role: "Medical Director", dept: "General Medicine", initials: "EV" },
+  { name: "Dr. Marcus Chen", role: "Clinical Director", dept: "Cardiology", initials: "MC" },
+  { name: "James Okonkwo", role: "Practice Manager", dept: "Operations", initials: "JO" },
+];
+
+const facilities = [
+  "12 private consultation rooms",
+  "On-site diagnostics laboratory",
+  "ECG and ultrasound capabilities",
+  "Fully digital medical records",
+  "Wheelchair accessible throughout",
+  "Private car parking available",
+];
+---
+
+<Layout
+  title="About"
+  description="Learn about Meridian Health Clinic's founding, philosophy, and commitment to unhurried, patient-centred care."
+>
+  <PageHeader
+    eyebrow="Our Story"
+    title="Care Built on Trust, Not Volume"
+    lede="Founded in 2012 by physicians who wanted to practise medicine the way it should be."
+  />
+
+  <!-- STORY -->
+  <section class="relative px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto grid max-w-[1400px] gap-16 md:grid-cols-2 md:items-center">
+      <div data-reveal>
+        <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-teal to-teal-mid flex items-center justify-center">
+          <div class="text-center">
+            <svg viewBox="0 0 80 80" fill="none" class="mx-auto mb-4 h-20 w-20">
+              <circle cx="40" cy="40" r="35" stroke="#B8923A" stroke-width="2"/>
+              <path d="M40 20v40M20 40h40" stroke="#B8923A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <p class="font-display text-3xl font-semibold text-bg">Since 2012</p>
+            <p class="eyebrow text-bg/70 mt-2">Healthcare the way it should be</p>
+          </div>
+        </div>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow mb-4 text-gold">Our Beginning</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          Founded by Physicians, for Patients
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-muted">
+          Meridian Health was founded in 2012 by a group of physicians who had grown frustrated with the volume-driven model of healthcare — the 10-minute appointments, the rotating cast of doctors, the feeling of being processed rather than cared for.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-muted">
+          We created a clinic where physicians have the time to listen, patients never feel rushed, and every interaction is built on continuity and trust.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="bg-teal-light px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Our Philosophy</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          Three Principles That Guide Everything
+        </h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        {principles.map((p) => (
+          <div class="rounded-2xl border border-border bg-white p-10" data-reveal>
+            <h3 class="font-display text-2xl font-semibold text-teal">{p.title}</h3>
+            <p class="mt-4 text-muted">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Leadership</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">The Team Behind the Care</h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        {leadership.map((l) => (
+          <div class="rounded-2xl border border-border bg-white p-10 text-center transition-all hover:border-gold hover:shadow-xl" data-reveal>
+            <div class="mx-auto h-20 w-20 rounded-full bg-teal flex items-center justify-center">
+              <span class="font-display text-2xl font-semibold text-gold">{l.initials}</span>
+            </div>
+            <h3 class="mt-6 font-display text-xl font-semibold text-teal">{l.name}</h3>
+            <p class="eyebrow mt-1 text-gold">{l.role}</p>
+            <p class="mt-1 text-muted">{l.dept}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES PREVIEW -->
+  <section class="bg-teal px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-16 md:grid-cols-2 md:items-center">
+        <div data-reveal>
+          <p class="eyebrow mb-4 text-gold">Our Facilities</p>
+          <h2 class="font-display text-balance text-4xl font-semibold text-bg md:text-5xl">
+            Modern Clinic, Warm Atmosphere
+          </h2>
+          <p class="mt-6 text-lg text-bg/80">
+            12 private consultation rooms, on-site diagnostics, and fully digital records — all designed to make your visit as smooth as possible.
+          </p>
+          <a href="/facilities" class="eyebrow mt-8 inline-block text-gold hover:text-gold-light">
+            View our facilities →
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-4" data-reveal>
+          {facilities.map((f) => (
+            <div class="flex items-center gap-3 rounded-lg bg-teal-dark/50 px-4 py-3">
+              <span class="text-gold">✓</span>
+              <span class="text-bg/90">{f}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCREDITATIONS -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-12 text-center" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Accreditations</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Recognised Standards</h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4" data-reveal>
+        {[
+          { name: "UKAS", full: "UK Accreditation Service" },
+          { name: "ISO 9001", full: "Quality Management" },
+          { name: "ISO 15189", full: "Medical Laboratories" },
+          { name: "CPR", full: "Cardiac Resuscitation" },
+        ].map((a) => (
+          <div class="rounded-xl border border-gold/30 bg-teal p-8 text-center">
+            <p class="font-display text-2xl font-semibold text-gold">{a.name}</p>
+            <p class="mt-2 text-bg/80 text-sm">{a.full}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+  </script>
+</Layout>

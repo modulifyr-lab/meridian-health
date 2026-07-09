@@ -1,0 +1,135 @@
+---
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/doctors", label: "Our Doctors" },
+  { href: "/patient-info", label: "Patient Info" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/blog", label: "Health Blog" },
+];
+---
+
+<header
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-500"
+  data-solid="false"
+>
+  <div
+    class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-10"
+  >
+    <a href="/" class="group flex items-center gap-3">
+      <div class="relative h-10 w-10">
+        <svg viewBox="0 0 40 40" fill="none" class="h-full w-full">
+          <circle cx="20" cy="20" r="18" fill="#B8923A" fill-opacity="0.15"/>
+          <path d="M20 8v24M8 20h24" stroke="#B8923A" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display text-xl font-semibold tracking-wide text-teal">Meridian Health</span>
+        <span class="text-[10px] tracking-widest text-muted uppercase">Precision Care</span>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="eyebrow relative text-teal-mid transition-colors hover:text-teal after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a
+        href="/contact"
+        class="eyebrow hidden rounded-full bg-gold px-6 py-2.5 text-teal transition-all hover:bg-gold-light hover:shadow-lg md:inline-block"
+      >
+        Book Appointment
+      </a>
+      <button
+        id="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        class="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+      >
+        <span class="h-0.5 w-6 bg-teal transition-all" id="bar1"></span>
+        <span class="h-0.5 w-6 bg-teal transition-all" id="bar2"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 hidden flex-col justify-center bg-bg px-8"
+>
+  <nav class="flex flex-col gap-6">
+    {
+      links.concat([
+        { href: "/", label: "Home" },
+        { href: "/insurance", label: "Insurance" },
+        { href: "/careers", label: "Careers" },
+        { href: "/contact", label: "Contact" },
+      ]).map((link) => (
+        <a href={link.href} class="font-display text-4xl text-teal">
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</div>
+
+<style>
+  header[data-solid="true"] {
+    background-color: rgba(10, 61, 74, 0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  header[data-solid="true"] .font-display,
+  header[data-solid="true"] .eyebrow,
+  header[data-solid="true"] #bar1,
+  header[data-solid="true"] #bar2 {
+    color: var(--color-bg);
+  }
+</style>
+
+<script>
+  const header = document.getElementById("site-nav");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const bar1 = document.getElementById("bar1");
+  const bar2 = document.getElementById("bar2");
+
+  const onScroll = () => {
+    if (!header) return;
+    header.dataset.solid = window.scrollY > 40 ? "true" : "false";
+  };
+  document.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  let open = false;
+  toggle?.addEventListener("click", () => {
+    open = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    menu?.classList.toggle("hidden", !open);
+    menu?.classList.toggle("flex", open);
+    bar1?.style.setProperty("transform", open ? "translateY(4px) rotate(45deg)" : "none");
+    bar2?.style.setProperty("transform", open ? "translateY(-4px) rotate(-45deg)" : "none");
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+
+  menu?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      open = false;
+      toggle?.setAttribute("aria-expanded", "false");
+      menu.classList.add("hidden");
+      menu.classList.remove("flex");
+      document.body.style.overflow = "";
+    })
+  );
+</script>

@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+---
+
+<Layout
+  title="Virtual Consultation"
+  description="Connect with Meridian Health physicians from anywhere. Video consultations available for both new and existing patients."
+>
+  <PageHeader
+    eyebrow="Virtual Care"
+    title="Video Consultations"
+    lede="Same unhurried care from your home or office."
+  />
+
+  <!-- INTRO -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-16 md:grid-cols-2 md:items-center">
+        <div data-reveal>
+          <p class="eyebrow mb-4 text-gold">Remote Care</p>
+          <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+            Healthcare Without the Commute
+          </h2>
+          <p class="mt-6 text-lg text-muted">
+            Our video consultations offer the same unhurried, patient-centred care you'd receive in person — from wherever you are.
+          </p>
+          <p class="mt-4 text-lg text-muted">
+            Whether you're travelling, working from home, or simply can't make it to the clinic, you can still see your preferred physician.
+          </p>
+          <div class="mt-8 space-y-4">
+            <div class="flex items-center gap-4">
+              <span class="text-gold text-xl">✓</span>
+              <span class="text-teal">Same physician continuity</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-gold text-xl">✓</span>
+              <span class="text-teal">Same 30+ minute appointments</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-gold text-xl">✓</span>
+              <span class="text-teal">Prescriptions sent electronically</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-gold text-xl">✓</span>
+              <span class="text-teal">Follow-up coordination</span>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-border bg-white p-10" data-reveal>
+          <h3 class="font-display text-2xl font-semibold text-teal">How It Works</h3>
+          <div class="mt-8 space-y-6">
+            {[
+              { step: "1", title: "Book Your Appointment", desc: "Contact us specifying video consultation and your preferred physician." },
+              { step: "2", title: "Receive Link", desc: "We'll email you a secure video link before your appointment time." },
+              { step: "3", title: "Connect & Consult", desc: "Click the link at your appointment time. Your doctor will be waiting." },
+            ].map((s) => (
+              <div class="flex gap-4">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-teal font-display font-semibold">
+                  {s.step}
+                </div>
+                <div>
+                  <h4 class="font-semibold text-teal">{s.title}</h4>
+                  <p class="mt-1 text-muted text-sm">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUITABLE FOR -->
+  <section class="bg-teal-light px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">When to Use</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Ideal For</h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          "Follow-up appointments",
+          "Prescription refills",
+          "Test result discussions",
+          "Mental health consultations",
+          "Travel health advice",
+          "Second opinions",
+          "Chronic disease management reviews",
+          "Pre-travel consultations",
+        ].map((item) => (
+          <div class="flex items-center gap-4 rounded-xl border border-border bg-white px-6 py-5" data-reveal>
+            <span class="text-gold">✓</span>
+            <span class="text-teal">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="px-6 py-20 text-center md:px-10 md:py-28">
+    <div class="mx-auto max-w-2xl" data-reveal>
+      <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Ready to Book?</h2>
+      <p class="mt-6 text-lg text-muted">
+        Contact us to schedule your video consultation. Same physician, same quality care.
+      </p>
+      <a href="/contact" class="mt-10 inline-block rounded-full bg-gold px-10 py-4 text-teal transition-all hover:bg-gold-light hover:shadow-lg">
+        Book Virtual Consultation
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+  </script>
+</Layout>

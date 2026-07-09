@@ -1,51 +1,64 @@
-# Meridian Health Clinic - Demo Website
+# Meridian Health Clinic
 
-A responsive demo website for a private healthcare clinic, Meridian Health Clinic.
+A Tier 3 Launch Kit demo built by Modulifyr — a fictional private healthcare clinic,
+used to demonstrate full-animation static site capability for healthcare clients.
 
-## Tier Level: 3 (Premium)
+**Live scope:** 14 pages (home, about, services, doctors, patient-info, insurance,
+contact, careers, testimonials, blog, facilities, health-tips, virtual-consultation,
+404), fully responsive, no backend — in line with Launch Kit boundaries.
 
-This site is a **Tier 3 Launch Kit** (Premium tier):
-- 10 pages total
-- Full custom animations: scroll-triggered sequences, background motion, micro-interactions
-- Enhanced GSAP animations with ScrollTrigger
-- Professional, enterprise-grade design suitable for agencies, startups, and complex corporate projects
+## Stack
 
-## Features
+Per `modulifyr-tech-stack-handbook-v1.1`, §2.1 (Static Website):
 
-- Multiple pages: Home, About, Services, Doctors, Patient Info, Insurance, Blog, Contact, Testimonials, Careers
-- Responsive design for mobile and desktop
-- Advanced animations using GSAP with ScrollTrigger
-- Modern UI/UX with teal, gold, and sage color scheme
-- Appointment booking functionality
-- Enhanced micro-interactions and scroll-driven animations
+| Layer | Choice |
+|---|---|
+| Framework | Astro |
+| Styling | Tailwind CSS v4 (CSS-first `@theme` tokens) |
+| Animation | GSAP + ScrollTrigger (full: scroll-triggered sequences, parallax, micro-interactions) |
+| Deployment target | Vercel / Cloudflare Pages |
 
-## Pages
+This is a migration from the original plain HTML/CSS/JS implementation to
+the Astro stack, following the same architecture as `lantern-house`. The
+original was not a documented exception and has been corrected.
 
-1. [index.html](file:///c:/Users/rijan/Downloads/files/meridian-health/index.html) - Homepage with hero, stats, departments, doctors, testimonials
-2. [about.html](file:///c:/Users/rijan/Downloads/files/meridian-health/about.html) - About the clinic
-3. [services.html](file:///c:/Users/rijan/Downloads/files/meridian-health/services.html) - Services offered
-4. [doctors.html](file:///c:/Users/rijan/Downloads/files/meridian-health/doctors.html) - Our doctors
-5. [patient-info.html](file:///c:/Users/rijan/Downloads/files/meridian-health/patient-info.html) - Patient information
-6. [insurance.html](file:///c:/Users/rijan/Downloads/files/meridian-health/insurance.html) - Insurance details
-7. [blog.html](file:///c:/Users/rijan/Downloads/files/meridian-health/blog.html) - Health blog
-8. [contact.html](file:///c:/Users/rijan/Downloads/files/meridian-health/contact.html) - Contact and booking
-9. [testimonials.html](file:///c:/Users/rijan/Downloads/files/meridian-health/testimonials.html) - Patient testimonials
-10. [careers.html](file:///c:/Users/rijan/Downloads/files/meridian-health/careers.html) - Careers at Meridian Health
+## Design
 
-## How to Use
+Brand and visual direction belong to the fictional client (Meridian Health),
+not Modulifyr — this demo carries its own distinct healthcare identity
+(Teal/Gold palette, Cormorant Garamond + DM Sans typography) rather than
+Modulifyr's brand. Every page footer credits Modulifyr with a link to
+modulifyr.com.
 
-1. Open any HTML file in a web browser
-2. Navigate through the pages using the navigation bar
-3. Explore the different sections and features
+Palette, type system, and overall visual approach are documented as design
+decisions specific to this brief — see `src/styles/global.css` for tokens.
 
-## Technologies Used
+## Structure
 
-- HTML5
-- CSS3 (with custom properties)
-- JavaScript
-- GSAP for animations (with ScrollTrigger)
-- Google Fonts (Cormorant Garamond, DM Sans)
+```
+src/
+  layouts/Layout.astro       shared HTML shell, fonts, nav + footer
+  components/
+    Nav.astro                 scroll-aware header, mobile menu
+    Footer.astro              sitemap + required "Powered by Modulifyr" credit
+    PageHeader.astro          shared inner-page hero header
+  scripts/animations.js       GSAP utilities: reveal, hero intro, parallax,
+                              counters, float, rotate-on-hover, scroll-Y
+                              reused across every page rather than duplicated
+  pages/                      14 routes
+```
 
-## License
+## Commands
 
-This is a demo project for educational purposes.
+```
+npm install
+npm run dev       # localhost:4321
+npm run build     # outputs to dist/
+npm run preview
+```
+
+## Sitemap (14 pages)
+
+`/` `/about` `/services` `/doctors` `/patient-info` `/insurance` `/contact`
+`/careers` `/testimonials` `/blog` `/facilities` `/health-tips`
+`/virtual-consultation` `/404`

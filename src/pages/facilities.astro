@@ -1,0 +1,165 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const facilities = [
+  {
+    name: "Consultation Rooms",
+    detail: "12 private consultation rooms, each designed for patient comfort and confidentiality. No crowded waiting rooms.",
+    icon: "🚪",
+  },
+  {
+    name: "Diagnostics Laboratory",
+    detail: "On-site laboratory for blood tests, urinalysis, and other diagnostics. Most results available within 24–48 hours.",
+    icon: "🧪",
+  },
+  {
+    name: "Cardiac Suite",
+    detail: "ECG, echocardiography, and stress testing capabilities for comprehensive heart health assessment.",
+    icon: "🫀",
+  },
+  {
+    name: "Ultrasound",
+    detail: "General and specialist ultrasound imaging for various diagnostic needs.",
+    icon: "📡",
+  },
+  {
+    name: "Procedure Room",
+    detail: "Minor procedures can be performed on-site in our fully equipped procedure room.",
+    icon: "🏥",
+  },
+  {
+    name: "Pharmacy",
+    detail: "Dispensing pharmacy for common medications. No need for separate pharmacy trips for routine prescriptions.",
+    icon: "💊",
+  },
+];
+
+const accessibility = [
+  "Wheelchair accessible throughout",
+  "Ground floor access with ramps",
+  "Accessible restrooms",
+  "Private car parking for disabled badge holders",
+  "Hearing loop system in reception",
+];
+---
+
+<Layout
+  title="Facilities"
+  description="Explore Meridian Health Clinic's modern facilities including consultation rooms, diagnostics lab, and cardiac suite."
+>
+  <PageHeader
+    eyebrow="Our Clinic"
+    title="Modern Facilities"
+    lede="A clinic designed around the needs of our patients, not the convenience of our staff."
+  />
+
+  <!-- FACILITIES -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">What We Offer</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          Facilities Designed for Care
+        </h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {facilities.map((f) => (
+          <div class="rounded-2xl border border-border bg-white p-10 transition-all hover:border-gold hover:shadow-xl" data-reveal>
+            <span class="text-4xl">{f.icon}</span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-teal">{f.name}</h3>
+            <p class="mt-3 text-muted">{f.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL -->
+  <section class="bg-teal-light px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-16 md:grid-cols-2 md:items-center">
+        <div data-reveal>
+          <p class="eyebrow mb-4 text-gold">Technology</p>
+          <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+            Fully Digital, Fully Secure
+          </h2>
+          <p class="mt-6 text-lg text-muted">
+            Every piece of your medical information is stored electronically in our secure practice management system. Your records are accessible to your physicians across all departments, never lost, and always up-to-date.
+          </p>
+          <p class="mt-4 text-lg text-muted">
+            Multilingual access means your records can be shared with specialists abroad when needed, with your explicit consent.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gold bg-teal p-10" data-reveal>
+          <h3 class="font-display text-2xl font-semibold text-bg">Digital Records Include:</h3>
+          <ul class="mt-6 space-y-4 text-bg/80">
+            <li class="flex items-start gap-3">
+              <span class="text-gold">✓</span>
+              Complete medical history
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold">✓</span>
+              All consultation notes
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold">✓</span>
+              Test results and imaging
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold">✓</span>
+              Prescriptions and pharmacy records
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold">✓</span>
+              Referral correspondence
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESSIBILITY -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Accessibility</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Accessible to All</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {accessibility.map((a) => (
+          <div class="flex items-center gap-4 rounded-xl border border-border bg-white px-6 py-5" data-reveal>
+            <span class="text-gold text-xl">✓</span>
+            <span class="text-teal">{a}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS PLACEHOLDER -->
+  <section class="bg-teal-light px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-12 text-center" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Gallery</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Take a Virtual Tour</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3" data-reveal>
+        {[1, 2, 3].map((n) => (
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-teal to-teal-mid flex items-center justify-center">
+            <span class="font-display text-2xl text-bg/50">Clinic Interior {n}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+  </script>
+</Layout>

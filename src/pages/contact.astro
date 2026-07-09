@@ -1,0 +1,183 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+---
+
+<Layout
+  title="Contact"
+  description="Book an appointment or send us an enquiry. Meridian Health Clinic is located at 123 Healthcare Boulevard."
+>
+  <PageHeader
+    eyebrow="Contact"
+    title="Book Your Appointment"
+    lede="We're here to answer your questions and get you seen as soon as possible."
+  />
+
+  <!-- CONTACT INFO -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-12 md:grid-cols-3">
+        <div class="rounded-2xl border border-border bg-white p-10 text-center" data-reveal>
+          <span class="text-4xl">📍</span>
+          <h3 class="mt-4 font-display text-xl font-semibold text-teal">Visit Us</h3>
+          <p class="mt-3 text-muted">
+            123 Healthcare Boulevard<br />
+            City Centre
+          </p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="eyebrow mt-4 inline-block text-gold hover:text-gold-light">
+            Get Directions →
+          </a>
+        </div>
+
+        <div class="rounded-2xl border border-border bg-white p-10 text-center" data-reveal>
+          <span class="text-4xl">📞</span>
+          <h3 class="mt-4 font-display text-xl font-semibold text-teal">Call Us</h3>
+          <p class="mt-3 text-muted">
+            +1 (555) 240-8800<br />
+            Mon–Fri: 8AM–6PM<br />
+            Sat: 9AM–2PM
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-border bg-white p-10 text-center" data-reveal>
+          <span class="text-4xl">✉️</span>
+          <h3 class="mt-4 font-display text-xl font-semibold text-teal">Email</h3>
+          <p class="mt-3 text-muted">
+            appointments@meridianhealthclinic.com<br />
+            info@meridianhealthclinic.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="bg-teal-light px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-3xl">
+      <div class="mb-12 text-center" data-reveal>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Send Us a Message</h2>
+        <p class="mt-4 text-muted">We respond within 1 business day.</p>
+      </div>
+
+      <form
+        class="rounded-2xl border border-border bg-white p-10 md:p-16"
+        data-reveal
+        onsubmit="event.preventDefault(); alert('Thank you for your enquiry. Our patient services team will contact you within 1 business day.');"
+      >
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <label class="eyebrow mb-2 block text-teal" for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              required
+              class="w-full rounded-lg border border-border bg-bg px-4 py-3 text-teal placeholder:text-muted focus:border-gold focus:outline-none"
+              placeholder="Your first name"
+            />
+          </div>
+          <div>
+            <label class="eyebrow mb-2 block text-teal" for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              required
+              class="w-full rounded-lg border border-border bg-bg px-4 py-3 text-teal placeholder:text-muted focus:border-gold focus:outline-none"
+              placeholder="Your last name"
+            />
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div>
+            <label class="eyebrow mb-2 block text-teal" for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              required
+              class="w-full rounded-lg border border-border bg-bg px-4 py-3 text-teal placeholder:text-muted focus:border-gold focus:outline-none"
+              placeholder="your@email.com"
+            />
+          </div>
+          <div>
+            <label class="eyebrow mb-2 block text-teal" for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              class="w-full rounded-lg border border-border bg-bg px-4 py-3 text-teal placeholder:text-muted focus:border-gold focus:outline-none"
+              placeholder="+1 (555)..."
+            />
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label class="eyebrow mb-2 block text-teal" for="department">Department</label>
+          <select
+            id="department"
+            required
+            class="w-full rounded-lg border border-border bg-bg px-4 py-3 text-teal focus:border-gold focus:outline-none"
+          >
+            <option value="">Select a department</option>
+            <option value="general">General & Internal Medicine</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="orthopaedics">Orthopaedics</option>
+            <option value="womens-health">Women's Health</option>
+            <option value="mental-health">Mental Health</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="mt-6">
+          <label class="eyebrow mb-2 block text-teal" for="message">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            required
+            class="w-full rounded-lg border border-border bg-bg px-4 py-3 text-teal placeholder:text-muted focus:border-gold focus:outline-none resize-none"
+            placeholder="How can we help you?"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="mt-8 w-full rounded-full bg-gold py-4 text-teal font-bold transition-all hover:bg-gold-light hover:shadow-lg"
+        >
+          Send Enquiry
+        </button>
+
+        <p class="mt-4 text-center text-sm text-muted">
+          *This form does not book an appointment. We'll respond with available times.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- QUICK ACTIONS -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-6 md:grid-cols-3">
+        <a href="tel:+1-555-240-8800" class="rounded-xl border border-gold bg-teal p-8 text-center transition-all hover:bg-teal-mid hover:shadow-xl" data-reveal>
+          <span class="text-4xl">📞</span>
+          <h3 class="mt-4 font-display text-xl font-semibold text-bg">Call Now</h3>
+          <p class="mt-2 text-bg/80">+1 (555) 240-8800</p>
+        </a>
+        <a href="mailto:appointments@meridianhealthclinic.com" class="rounded-xl border border-gold bg-teal p-8 text-center transition-all hover:bg-teal-mid hover:shadow-xl" data-reveal>
+          <span class="text-4xl">✉️</span>
+          <h3 class="mt-4 font-display text-xl font-semibold text-bg">Email Us</h3>
+          <p class="mt-2 text-bg/80">appointments@meridianhealthclinic.com</p>
+        </a>
+        <a href="/virtual-consultation" class="rounded-xl border border-gold bg-teal p-8 text-center transition-all hover:bg-teal-mid hover:shadow-xl" data-reveal>
+          <span class="text-4xl">💻</span>
+          <h3 class="mt-4 font-display text-xl font-semibold text-bg">Virtual Consult</h3>
+          <p class="mt-2 text-bg/80">Video appointments available</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+  </script>
+</Layout>

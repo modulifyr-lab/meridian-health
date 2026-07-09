@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const stats = [
+  { num: "98%", label: "Patient Satisfaction" },
+  { num: "12k+", label: "Patients Treated" },
+  { num: "4.9", label: "Average Rating" },
+  { num: "85%", label: "Return Patients" },
+];
+
+const testimonials = [
+  { quote: "The attention I received was unlike anything I'd experienced. Dr. Vasquez took an hour just to understand my history before even examining me.", name: "Sarah M.", tenure: "Patient since 2019", rating: 5 },
+  { quote: "Same doctor every time. They actually remember you, your family, your concerns. It makes such a difference.", name: "James K.", tenure: "Patient since 2021", rating: 5 },
+  { quote: "Finally found a clinic that doesn't rush me out the door. Dr. Chen spent 45 minutes explaining my options.", name: "Priya S.", tenure: "Patient since 2020", rating: 5 },
+  { quote: "I've been to many clinics internationally. Meridian stands apart for its genuine care and follow-through.", name: "Ahmed R.", tenure: "Patient since 2022", rating: 5 },
+  { quote: "My daughter was terrified of doctors until we found Meridian. The staff are so patient and gentle with children.", name: "Maria T.", tenure: "Patient since 2018", rating: 5 },
+  { quote: "The insurance process was seamless. They handled everything and I just paid my copay.", name: "David L.", tenure: "Patient since 2023", rating: 5 },
+];
+---
+
+<Layout
+  title="Testimonials"
+  description="Read what patients say about their experience at Meridian Health Clinic."
+>
+  <PageHeader
+    eyebrow="Patient Stories"
+    title="What Our Patients Say"
+    lede="Real experiences from real patients who chose unhurried care."
+  />
+
+  <!-- STATS -->
+  <section class="bg-teal px-6 py-16 md:px-10">
+    <div class="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 md:grid-cols-4">
+      {stats.map((s) => (
+        <div class="text-center" data-reveal>
+          <p class="font-display text-5xl font-semibold text-gold md:text-6xl">{s.num}</p>
+          <p class="eyebrow mt-2 text-bg/70">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Reviews</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">Patient Experiences</h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((t) => (
+          <div class="rounded-2xl border border-border bg-white p-10 transition-all hover:border-gold hover:shadow-xl" data-reveal>
+            <div class="flex gap-1 text-gold mb-4">
+              {Array(t.rating).fill(null).map(() => "★").join("")}
+            </div>
+            <p class="font-display text-lg italic text-teal">"{t.quote}"</p>
+            <div class="mt-8 border-t border-border pt-6">
+              <p class="font-semibold text-teal">{t.name}</p>
+              <p class="eyebrow mt-1 text-muted">{t.tenure}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-teal-light px-6 py-20 text-center md:px-10 md:py-28">
+    <div class="mx-auto max-w-2xl" data-reveal>
+      <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">
+        Ready to Experience the Difference?
+      </h2>
+      <p class="mt-6 text-lg text-muted">
+        Join thousands of patients who have made the switch to unhurried, patient-centred care.
+      </p>
+      <a href="/contact" class="mt-10 inline-block rounded-full bg-gold px-10 py-4 text-teal transition-all hover:bg-gold-light hover:shadow-lg">
+        Book Your Appointment
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro, initCounters } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+    initCounters();
+  </script>
+</Layout>

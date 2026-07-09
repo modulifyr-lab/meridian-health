@@ -1,0 +1,278 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const stats = [
+  { to: 18, suffix: "", label: "Specialist Physicians" },
+  { to: 6, suffix: "", label: "Clinical Departments" },
+  { to: 12000, suffix: "+", label: "Patients Treated" },
+  { to: 98, suffix: "%", label: "Patient Satisfaction" },
+];
+
+const specialties = [
+  { name: "General & Internal Medicine", icon: "🏥", desc: "Comprehensive primary care for adults" },
+  { name: "Cardiology", icon: "🫀", desc: "Heart health and cardiovascular care" },
+  { name: "Dermatology", icon: "🧴", desc: "Medical and cosmetic skin care" },
+  { name: "Orthopaedics", icon: "🦴", desc: "Bone, joint, and muscle treatment" },
+  { name: "Women's Health", icon: "👩‍⚕️", desc: "Gynaecology and reproductive health" },
+  { name: "Mental Health", icon: "🧠", desc: "Psychiatry and psychological support" },
+];
+
+const doctors = [
+  { name: "Dr. Elena Vasquez", role: "Medical Director", dept: "General Medicine" },
+  { name: "Dr. Marcus Chen", role: "Clinical Director", dept: "Cardiology" },
+  { name: "Dr. Priya Nair", role: "Consultant", dept: "Women's Health" },
+];
+
+const process = [
+  { step: "1", title: "Book Your Appointment", desc: "Call us or use the online form to schedule your visit" },
+  { step: "2", title: "Complete Pre-Visit Form", desc: "Save time with our digital intake process" },
+  { step: "3", title: "Your Consultation", desc: "30+ minute appointments with your chosen physician" },
+  { step: "4", title: "Follow-Up Care", desc: "Coordinated treatment plans and ongoing support" },
+];
+
+const testimonials = [
+  { quote: "The attention I received was unlike anything I'd experienced. Dr. Vasquez took an hour just to understand my history.", name: "Sarah M.", years: "Patient since 2019" },
+  { quote: "Same doctor every time. They actually remember you.", name: "James K.", years: "Patient since 2021" },
+  { quote: "Finally found a clinic that doesn't rush me out the door.", name: "Priya S.", years: "Patient since 2020" },
+];
+---
+
+<Layout
+  title="Home"
+  description="Meridian Health Clinic — Precision Care. Personal Attention. Private healthcare with unhurried appointments."
+>
+  <!-- HERO -->
+  <section class="relative min-h-[100svh] flex items-end overflow-hidden bg-teal pt-20">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-gold/10 blur-3xl" data-scroll-y="30"></div>
+      <div class="absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-teal-mid/30 blur-3xl" data-scroll-y="20"></div>
+      <div class="absolute right-1/4 top-1/3 h-48 w-48 rounded-full bg-gold/5 blur-2xl" data-float data-scroll-y="15"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto w-full max-w-[1400px] px-6 pb-20 md:px-10 md:pb-28">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-6 text-gold" data-hero-line style="opacity:0">
+          UKAS Accredited · ISO 9001:2015
+        </p>
+        <h1 class="font-display text-balance text-5xl font-semibold leading-[0.95] text-bg md:text-7xl">
+          <span class="block overflow-hidden">
+            <span class="block" data-hero-line style="opacity:0">Precision Care.</span>
+          </span>
+          <span class="block overflow-hidden">
+            <span class="block italic text-gold" data-hero-line style="opacity:0">Personal Attention.</span>
+          </span>
+        </h1>
+        <p class="mt-8 max-w-xl text-lg text-bg/80" data-hero-line style="opacity:0">
+          A private clinic founded by physicians who believe your health deserves more than a 10-minute slot.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row" data-hero-line style="opacity:0">
+          <a href="/contact" class="eyebrow rounded-full bg-gold px-8 py-4 text-teal transition-all hover:bg-gold-light hover:shadow-lg hover:scale-105">
+            Book Appointment
+          </a>
+          <a href="/about" class="eyebrow rounded-full border border-bg/30 px-8 py-4 text-bg transition-all hover:border-bg hover:bg-bg/10">
+            Learn About Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="bg-teal-dark px-6 py-16 md:px-10">
+    <div class="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 md:grid-cols-4">
+      {stats.map((s) => (
+        <div class="text-center" data-reveal>
+          <p class="font-display text-5xl font-semibold text-gold md:text-6xl">
+            <span data-count-to={s.to}>0</span>{s.suffix}
+          </p>
+          <p class="eyebrow mt-2 text-bg/70">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section class="relative px-6 py-24 md:px-10 md:py-32">
+    <div class="absolute -top-20 right-0 h-64 w-64 rounded-full bg-gold/5 blur-3xl"></div>
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Our Services</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          Six Specialties. One Standard of Care.
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {specialties.map((s) => (
+          <div class="group rounded-2xl border border-border bg-white p-8 transition-all hover:border-gold hover:shadow-2xl" data-reveal data-rotate-hover>
+            <span class="text-4xl">{s.icon}</span>
+            <h3 class="mt-4 font-display text-2xl font-semibold text-teal">{s.name}</h3>
+            <p class="mt-2 text-muted">{s.desc}</p>
+            <a href="/services" class="eyebrow mt-6 inline-block text-gold transition-transform group-hover:translate-x-2">
+              Learn more →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATORS -->
+  <section class="bg-teal-light px-6 py-24 md:px-10 md:py-32">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Why Meridian</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          The Difference Is in the Details
+        </h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: "Same-Day Appointments", desc: "Book morning, be seen this afternoon" },
+          { title: "International Insurance", desc: "Direct billing with major providers" },
+          { title: "Multilingual Staff", desc: "English, French, German, Arabic" },
+          { title: "Fully Digital Records", desc: "Secure, accessible, paperless" },
+        ].map((d) => (
+          <div class="rounded-xl border border-border bg-white p-8" data-reveal>
+            <h3 class="font-display text-xl font-semibold text-teal">{d.title}</h3>
+            <p class="mt-3 text-muted">{d.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="relative px-6 py-24 md:px-10 md:py-32">
+    <div class="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-teal-mid/10 blur-3xl"></div>
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Your Visit</p>
+        <h2 class="font-display text-balance text-4xl font-semibold text-teal md:text-5xl">
+          How It Works
+        </h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-4">
+        {process.map((p) => (
+          <div class="relative" data-reveal>
+            <div class="absolute -top-4 -left-2 h-12 w-12 rounded-full bg-gold text-teal flex items-center justify-center font-display text-xl font-semibold">
+              {p.step}
+            </div>
+            <div class="pt-16">
+              <h3 class="font-display text-lg font-semibold text-teal">{p.title}</h3>
+              <p class="mt-2 text-muted">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR SPOTLIGHT -->
+  <section class="bg-teal px-6 py-24 md:px-10 md:py-32">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Meet Our Doctors</p>
+        <h2 class="font-display text-4xl font-semibold text-bg md:text-5xl">Expert Physicians</h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        {doctors.map((d) => (
+          <div class="rounded-2xl border border-bg/10 bg-teal-dark/50 p-8 text-center transition-all hover:bg-teal-dark/70" data-reveal>
+            <div class="mx-auto h-20 w-20 rounded-full bg-gold/20 flex items-center justify-center">
+              <span class="font-display text-2xl font-semibold text-gold">{d.name.split(' ').map(n => n[0]).slice(0,2).join('')}</span>
+            </div>
+            <h3 class="mt-4 font-display text-xl font-semibold text-bg">{d.name}</h3>
+            <p class="eyebrow mt-1 text-gold">{d.role}</p>
+            <p class="mt-1 text-bg/70">{d.dept}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center" data-reveal>
+        <a href="/doctors" class="eyebrow inline-block rounded-full border border-gold px-8 py-4 text-gold transition-all hover:bg-gold hover:text-teal">
+          View All 18 Doctors
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="relative px-6 py-24 md:px-10 md:py-32">
+    <div class="absolute -right-20 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-gold/5 blur-3xl"></div>
+    <div class="mx-auto max-w-[1400px]">
+      <div class="mb-16 max-w-2xl" data-reveal>
+        <p class="eyebrow mb-4 text-gold">Patient Stories</p>
+        <h2 class="font-display text-4xl font-semibold text-teal md:text-5xl">What Patients Say</h2>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        {testimonials.map((t) => (
+          <div class="rounded-2xl border border-border bg-white p-10" data-reveal>
+            <div class="flex gap-1 text-gold mb-4">★★★★★</div>
+            <p class="font-display text-lg italic text-teal">"{t.quote}"</p>
+            <p class="mt-6 font-semibold text-teal">{t.name}</p>
+            <p class="eyebrow text-muted">{t.years}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCREDITATIONS -->
+  <section class="bg-teal-light px-6 py-16 md:px-10">
+    <div class="mx-auto max-w-[1400px]">
+      <p class="eyebrow mb-8 text-center text-gold" data-reveal>Accreditations</p>
+      <div class="flex flex-wrap items-center justify-center gap-12" data-reveal>
+        {["UKAS Medical Laboratory", "ISO 9001:2015", "ISO 15189", "CPR Certified"].map((a) => (
+          <div class="rounded-full border border-border bg-white px-8 py-4">
+            <p class="font-display text-lg font-semibold text-teal">{a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative overflow-hidden bg-teal px-6 py-24 text-center md:px-10 md:py-32">
+    <div class="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl"></div>
+    <div class="absolute -top-20 -left-20 h-48 w-48 rounded-full bg-gold/10 blur-3xl"></div>
+    <div class="relative z-10 mx-auto max-w-2xl" data-reveal>
+      <h2 class="font-display text-balance text-4xl font-semibold text-bg md:text-5xl">
+        Your Health Deserves Better Than 10 Minutes
+      </h2>
+      <p class="mt-6 text-lg text-bg/80">
+        Schedule your first consultation today. New patients welcome.
+      </p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/contact" class="eyebrow rounded-full bg-gold px-10 py-4 text-teal transition-all hover:bg-gold-light hover:shadow-lg hover:scale-105">
+          Book Appointment
+        </a>
+        <a href="tel:+1-555-240-8800" class="eyebrow rounded-full border border-bg/30 px-10 py-4 text-bg transition-all hover:border-bg hover:bg-bg/10">
+          Call +1 (555) 240-8800
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import {
+      initReveal,
+      initHeroIntro,
+      initCounters,
+      initParallax,
+      initFloat,
+      initRotateOnHover,
+      initScrollY,
+    } from "../scripts/animations.js";
+
+    initHeroIntro();
+    initReveal();
+    initCounters();
+    initParallax();
+    initFloat();
+    initRotateOnHover();
+    initScrollY();
+  </script>
+</Layout>

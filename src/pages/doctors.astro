@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const doctors = [
+  { name: "Dr. Elena Vasquez", dept: "General Medicine", role: "Medical Director", initials: "EV" },
+  { name: "Dr. Samuel Osei", dept: "General Medicine", role: "Senior Physician", initials: "SO" },
+  { name: "Dr. Mei Lin", dept: "General Medicine", role: "Physician", initials: "ML" },
+  { name: "Dr. Patrick Brennan", dept: "General Medicine", role: "Physician", initials: "PB" },
+  { name: "Dr. Marcus Chen", dept: "Cardiology", role: "Clinical Director", initials: "MC" },
+  { name: "Dr. Fatima Al-Rashid", dept: "Cardiology", role: "Consultant", initials: "FA" },
+  { name: "Dr. David Kowalski", dept: "Cardiology", role: "Consultant", initials: "DK" },
+  { name: "Dr. Isabella Romano", dept: "Dermatology", role: "Consultant", initials: "IR" },
+  { name: "Dr. James Okafor", dept: "Dermatology", role: "Consultant", initials: "JO" },
+  { name: "Dr. Sofia Petrov", dept: "Dermatology", role: "Physician", initials: "SP" },
+  { name: "Dr. Rajiv Sharma", dept: "Orthopaedics", role: "Consultant", initials: "RS" },
+  { name: "Dr. Claire Beaumont", dept: "Orthopaedics", role: "Consultant", initials: "CB" },
+  { name: "Dr. Tomas Garcia", dept: "Orthopaedics", role: "Physician", initials: "TG" },
+  { name: "Dr. Priya Nair", dept: "Women's Health", role: "Consultant", initials: "PN" },
+  { name: "Dr. Amara Diallo", dept: "Women's Health", role: "Consultant", initials: "AD" },
+  { name: "Dr. Yuki Tanaka", dept: "Women's Health", role: "Physician", initials: "YT" },
+  { name: "Dr. Sebastian Hartmann", dept: "Mental Health", role: "Consultant", initials: "SH" },
+  { name: "Dr. Layla Hassan", dept: "Mental Health", role: "Consultant", initials: "LH" },
+];
+
+const departments = ["All", "General Medicine", "Cardiology", "Dermatology", "Orthopaedics", "Women's Health", "Mental Health"];
+---
+
+<Layout
+  title="Our Doctors"
+  description="Meet Meridian Health's team of 18 specialist physicians across 6 departments."
+>
+  <PageHeader
+    eyebrow="Our Team"
+    title="18 Specialist Physicians"
+    lede="Our doctors were chosen not only for their clinical expertise, but for their commitment to unhurried, patient-centred care."
+  />
+
+  <!-- FILTER -->
+  <section class="bg-teal-light border-b border-border px-6 py-8 md:px-10 sticky top-[72px] z-30">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap gap-3" id="filter-container">
+        {departments.map((d) => (
+          <button
+            class={`eyebrow rounded-full px-5 py-2.5 transition-all ${d === 'All' ? 'bg-teal text-bg' : 'bg-white text-teal border border-border hover:border-gold'}`}
+            data-filter={d}
+          >
+            {d}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS GRID -->
+  <section class="px-6 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="doctors-grid">
+        {doctors.map((d) => (
+          <div
+            class="doctor-card rounded-2xl border border-border bg-white p-8 text-center transition-all hover:border-gold hover:shadow-2xl"
+            data-dept={d.dept}
+            data-reveal
+          >
+            <div class="mx-auto h-20 w-20 rounded-full bg-teal flex items-center justify-center">
+              <span class="font-display text-2xl font-semibold text-gold">{d.initials}</span>
+            </div>
+            <h3 class="mt-6 font-display text-xl font-semibold text-teal">{d.name}</h3>
+            <p class="eyebrow mt-2 text-gold">{d.role}</p>
+            <p class="mt-2 text-muted text-sm">{d.dept}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-teal px-6 py-20 text-center md:px-10 md:py-28">
+    <div class="mx-auto max-w-2xl" data-reveal>
+      <h2 class="font-display text-4xl font-semibold text-bg md:text-5xl">Ready to Book?</h2>
+      <p class="mt-6 text-lg text-bg/80">
+        See your preferred doctor for a consultation. We guarantee same-physician continuity at every visit.
+      </p>
+      <a href="/contact" class="mt-10 inline-block rounded-full bg-gold px-10 py-4 text-teal transition-all hover:bg-gold-light hover:shadow-lg">
+        Book an Appointment
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { initReveal, initHeroIntro } from "../scripts/animations.js";
+    initHeroIntro();
+    initReveal();
+
+    const filterBtns = document.querySelectorAll("[data-filter]");
+    const cards = document.querySelectorAll(".doctor-card");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+
+        filterBtns.forEach((b) => {
+          b.classList.remove("bg-teal", "text-bg");
+          b.classList.add("bg-white", "text-teal", "border", "border-border");
+        });
+        btn.classList.remove("bg-white", "text-teal", "border", "border-border");
+        btn.classList.add("bg-teal", "text-bg");
+
+        cards.forEach((card) => {
+          const dept = card.getAttribute("data-dept");
+          if (filter === "All" || dept === filter) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</Layout>
